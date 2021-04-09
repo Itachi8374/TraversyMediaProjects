@@ -1,0 +1,55 @@
+*{
+    box-sizing: border-box;
+}
+
+h1{
+    text-align: center;
+    font-size: 44px;
+}
+
+div{
+    width: 50%;
+    margin: auto;
+}
+
+input{
+    width: 100%;
+    padding: 15px 0px;
+    margin: 20px;
+    border-style: none;
+    border-bottom: 1px solid rgb(112, 106, 106);
+    font-size: 20px;
+}
+
+input:focus{
+    outline-style: none;
+    border-style: none;
+    border-bottom:2px solid rgb(0, 110, 255);
+}
+
+ul{
+    width: 100%;
+    list-style: none;
+    padding-left: 0px;
+    margin: 20px;
+}
+
+li{
+    border: 1px solid rgb(177, 172, 172);
+    border-bottom: 0.5px;
+}
+
+.last{
+    border-bottom: 1px solid rgb(177, 172, 172);
+}
+
+.head{
+    padding: 20px;
+    font-size: 25px;
+}
+
+.name{
+    padding: 10px 30px;
+    font-size: 18px;
+    color: rgb(0, 110, 255);
+}
