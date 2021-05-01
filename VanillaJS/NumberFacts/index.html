@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Number Facts</title>
+</head>
+<body>
+    <input type="number" id="number-input" placeholder="Enter a non negative number to get fact">
+    <div>
+        <h3>Fact</h3>
+        <h5></h5>
+    </div>
+
+    <script>
+        const number = document.getElementById('number-input') ;
+
+        /***
+            USING AJAX Request
+        ***/
+        // const getFact = ()=>{
+        //     if(number.value == ''){
+        //         document.querySelector('h5').textContent = '';
+        //         return ;
+        //     }
+        //     if(number.value<0){
+        //         alert('Please enter non-negative integer')
+        //     }else{
+        //         let xhr = new XMLHttpRequest();
+        //         xhr.open('GET', 'http://numbersapi.com/'+ number.value);
+        //         xhr.onload = function(){
+        //             if(this.status == 200){
+        //                 const res = this.responseText;
+        //                 document.querySelector('h5').textContent = res;
+        //             }
+        //         }
+        //         xhr.send();
+        //     }
+            
+        // }
+        // number.addEventListener('input', getFact);
+
+        /***
+         * USING FETCH API
+         * **/
+        
+         const getFact = async () => {
+            if(number.value == ''){
+                document.querySelector('h5').textContent = '';
+                return ;
+            }
+            if(number.value<0){
+                alert('Please enter non-negative integer')
+                document.querySelector('h5').textContent = '';
+                return;
+            }
+
+            const res = await fetch('http://numbersapi.com/'+ number.value);
+            const val = await res.text();
+            document.querySelector('h5').textContent = val;
+         }
+         number.addEventListener('input', getFact);
+
+
+    </script>
+</body>
+</html>
