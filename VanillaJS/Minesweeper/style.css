@@ -1,0 +1,16 @@
+*{
+    box-sizing: border-box;
+}
+.grid{
+    height: 400px;
+    width: 400px;
+    display: flex;
+    background-color: grey;
+    flex-wrap: wrap;
+}
+
+.grid div{
+    height: 40px;
+    width: 40px;
+    border: 1px solid black;
+}
